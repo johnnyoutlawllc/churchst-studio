@@ -47,21 +47,27 @@ const services = [
 const testimonials = [
   {
     quote:
-      "It was easy to find and the place was clean and well kept. We stayed there as a stop after our wedding and it met all expectations. Would stay again if need be. Thanks for the wonderful accommodations!",
-    name: "Jennifer",
-    date: "June 2025",
+      "We really enjoyed our stay at Johnny's place. The home was clean and cozy, and the backyard was a huge hit with our family. We loved the heated outdoor seating area, the fire pit, and the easy-to-use propane grill. The kids had so much fun with the ping pong table and the outdoor TV kept the little ones happily entertained. Johnny was kind and easy to communicate with, and he even brought marshmallows for the kids to roast, which was such a sweet touch.",
+    name: "Amber",
+    location: "Cleburne, TX",
+    date: "January 2026",
+    stars: 4,
   },
   {
     quote:
-      "I recently stayed in this BNB for an out of town trip and all I can say is that the stay was so golden and peaceful. The house is located in a nice small neighborhood, so there wasn't any problems with outside noise nor was the BNB hard to find.",
-    name: "Braeden",
-    date: "April 2025",
+      "This place is a gem. I love the outdoor area to lounge and watch football while I was in. Daughter is a guitar player and she loves music so she spent her time doing that inside. Bathroom is awesome. Man cave vibes. I loved it.",
+    name: "Roman",
+    location: "Terrell, TX",
+    date: "November 2025",
+    stars: 5,
   },
   {
     quote:
-      "My kids and I really enjoyed our stay. Tons of activities set up for you to have a great time and never become bored. We enjoyed music, watched movies, played games, had a fire, played basketball, road bikes, cooked, bbq, ping pong, darts and played frisbee!",
-    name: "Chase",
-    date: "April 2025",
+      "This is a beautiful place with a wonderful bathroom. The back yard is a definite must for entertaining. John and Maria responded very quickly whenever I had questions. Definitely would stay here again when in Greenville.",
+    name: "Maura",
+    location: "West Saint Paul, MN",
+    date: "November 2025",
+    stars: 5,
   },
 ];
 
@@ -196,9 +202,22 @@ export default function Home() {
       {/* Testimonials */}
       <section className="py-24 bg-surface border-y border-border">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Made with Love in Greenville
-          </h2>
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <span className="text-4xl font-bold text-accent">4.96</span>
+              <div className="flex text-accent">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-2">
+              Guest Favorite on Airbnb
+            </h2>
+            <p className="text-muted">69 reviews from real guests</p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t) => (
@@ -206,13 +225,19 @@ export default function Home() {
                 key={t.name}
                 className="p-8 rounded-xl border border-border bg-background"
               >
-                <div className="text-accent text-4xl mb-4">&ldquo;</div>
+                <div className="flex text-accent mb-4">
+                  {[...Array(t.stars)].map((_, i) => (
+                    <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
                 <p className="text-foreground/80 text-sm leading-relaxed mb-6">
-                  {t.quote}
+                  &ldquo;{t.quote}&rdquo;
                 </p>
                 <div>
                   <p className="font-semibold text-sm">{t.name}</p>
-                  <p className="text-muted text-xs">{t.date}</p>
+                  <p className="text-muted text-xs">{t.location} - {t.date}</p>
                 </div>
               </div>
             ))}
