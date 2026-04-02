@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -19,10 +20,15 @@ export function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-8 h-8 bg-accent rounded-sm flex items-center justify-center text-background font-bold text-sm group-hover:bg-accent-hover transition-colors">
-            CS
-          </div>
+        <Link href="/" className="flex items-center gap-2 group">
+          <Image
+            src="/logo-nav.png"
+            alt="Church Street Studio"
+            width={53}
+            height={48}
+            className="group-hover:opacity-80 transition-opacity"
+            priority
+          />
           <span className="font-semibold text-lg tracking-tight hidden sm:block">
             Church Street Studio
           </span>

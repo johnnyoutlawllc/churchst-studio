@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -8,10 +9,12 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 bg-accent rounded-sm flex items-center justify-center text-background font-bold text-sm">
-                CS
-              </div>
-              <span className="font-semibold text-lg">Church Street Studio</span>
+              <Image
+                src="/logo.png"
+                alt="Church Street Studio"
+                width={120}
+                height={108}
+              />
             </div>
             <p className="text-muted text-sm leading-relaxed">
               2404 Church Street<br />

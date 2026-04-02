@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About",
@@ -95,8 +96,8 @@ export default function AboutPage() {
   return (
     <div className="pt-24 pb-16">
       {/* Hero */}
-      <section className="max-w-4xl mx-auto px-6 mb-24">
-        <div className="text-center">
+      <section className="max-w-6xl mx-auto px-6 mb-24">
+        <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             A Creative Space with Small-Town Soul
           </h1>
@@ -106,42 +107,71 @@ export default function AboutPage() {
             century-old home was once a bustling birthing center where countless new stories began.
           </p>
         </div>
+        <div className="relative h-64 md:h-96 rounded-xl overflow-hidden">
+          <Image
+            src="/photos/DJI_0154.jpg"
+            alt="Aerial drone view of Church Street Studio and the main house"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
       </section>
 
       {/* What it's for */}
       <section className="max-w-6xl mx-auto px-6 mb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-8 rounded-xl border border-border bg-surface">
-            <h2 className="text-2xl font-bold mb-4">
-              Built for Remote Work That Doesn't Feel Remote
-            </h2>
-            <p className="text-foreground/70 text-sm leading-relaxed mb-4">
-              Church Street Studio makes working away from the office actually feel good. Settle in
-              at the standing desk or roll your laptop out to the backyard's shaded table. High-speed
-              WiFi and a 75" smart TV let you take video calls or screen-share presentations without
-              a hiccup.
-            </p>
-            <p className="text-foreground/70 text-sm leading-relaxed">
-              When you're done, unwind in the hammock, shoot some hoops, or pedal around the
-              neighborhood on one of our bikes. It's an easy reset that beats any hotel conference
-              room.
-            </p>
+          <div className="rounded-xl border border-border bg-surface overflow-hidden">
+            <div className="relative h-48">
+              <Image
+                src="/photos/IMG_7770.jpg"
+                alt="Dual workstation with large monitor and ergonomic chairs"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-8">
+              <h2 className="text-2xl font-bold mb-4">
+                Built for Remote Work That Doesn't Feel Remote
+              </h2>
+              <p className="text-foreground/70 text-sm leading-relaxed mb-4">
+                Church Street Studio makes working away from the office actually feel good. Settle in
+                at the standing desk or roll your laptop out to the backyard's shaded table. High-speed
+                WiFi and a 75" smart TV let you take video calls or screen-share presentations without
+                a hiccup.
+              </p>
+              <p className="text-foreground/70 text-sm leading-relaxed">
+                When you're done, unwind in the hammock, shoot some hoops, or pedal around the
+                neighborhood on one of our bikes. It's an easy reset that beats any hotel conference
+                room.
+              </p>
+            </div>
           </div>
 
-          <div className="p-8 rounded-xl border border-border bg-surface">
-            <h2 className="text-2xl font-bold mb-4">
-              Events, Gatherings, and a Backyard Made for Texas Evenings
-            </h2>
-            <p className="text-foreground/70 text-sm leading-relaxed mb-4">
-              From small birthday bashes and bachelor parties to casual meet-ups or family reunions,
-              the Studio adapts to what you're planning. With a big fenced backyard set up for fun:
-              basketball, recreational pickleball, cornhole, beer pong, covered seating, and even an
-              outdoor TV.
-            </p>
-            <p className="text-foreground/70 text-sm leading-relaxed">
-              Want to crank up the grill and let the day run long? That's exactly what this place was
-              built for.
-            </p>
+          <div className="rounded-xl border border-border bg-surface overflow-hidden">
+            <div className="relative h-48">
+              <Image
+                src="/photos/IMG_6471.jpg"
+                alt="Backyard hammock with covered pavilion and patio"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-8">
+              <h2 className="text-2xl font-bold mb-4">
+                Events, Gatherings, and a Backyard Made for Texas Evenings
+              </h2>
+              <p className="text-foreground/70 text-sm leading-relaxed mb-4">
+                From small birthday bashes and bachelor parties to casual meet-ups or family reunions,
+                the Studio adapts to what you're planning. With a big fenced backyard set up for fun:
+                basketball, recreational pickleball, cornhole, beer pong, covered seating, and even an
+                outdoor TV.
+              </p>
+              <p className="text-foreground/70 text-sm leading-relaxed">
+                Want to crank up the grill and let the day run long? That's exactly what this place was
+                built for.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -218,17 +248,28 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="max-w-3xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold mb-4">Come See It for Yourself</h2>
-        <p className="text-muted text-lg mb-8">
-          The photos don't do it justice. Book a session and find out why people keep coming back.
-        </p>
-        <Link
-          href="/book"
-          className="inline-block px-8 py-4 bg-accent text-background font-semibold rounded-lg hover:bg-accent-hover transition-colors"
-        >
-          Book the Studio
-        </Link>
+      <section className="relative max-w-6xl mx-auto px-6 mb-8">
+        <div className="relative rounded-xl overflow-hidden">
+          <Image
+            src="/photos/DJI_0087.jpg"
+            alt="Church Street Studio front porch"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-background/75" />
+          <div className="relative z-10 py-20 text-center">
+            <h2 className="text-3xl font-bold mb-4">Come See It for Yourself</h2>
+            <p className="text-muted text-lg mb-8">
+              The photos don't do it justice. Book a session and find out why people keep coming back.
+            </p>
+            <Link
+              href="/book"
+              className="inline-block px-8 py-4 bg-accent text-background font-semibold rounded-lg hover:bg-accent-hover transition-colors"
+            >
+              Book the Studio
+            </Link>
+          </div>
+        </div>
       </section>
     </div>
   );

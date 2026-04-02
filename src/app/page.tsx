@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   {
@@ -8,11 +9,8 @@ const services = [
     duration: "4 hours",
     description:
       "Standing desks, fast WiFi, 20\" monitor, and a 75\" TV for presentations. Work hard, then unwind in the hammock.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
-      </svg>
-    ),
+    photo: "/photos/IMG_7770.jpg",
+    photoAlt: "Dual workstation setup with large monitor and ergonomic chairs",
   },
   {
     name: "Small Events",
@@ -21,11 +19,8 @@ const services = [
     duration: "4 hours",
     description:
       "Birthday parties, meetups, bachelor parties, creative sessions. Full house and backyard access.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-      </svg>
-    ),
+    photo: "/photos/IMG_3399.jpg",
+    photoAlt: "Covered patio with hexagon picnic table and string lights",
   },
   {
     name: "Large Events",
@@ -34,11 +29,8 @@ const services = [
     duration: "4 hours",
     description:
       "Bigger gatherings, family reunions, watch parties. Fire up the grill, set up the yard, and let it run.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
-      </svg>
-    ),
+    photo: "/photos/IMG_7765.jpg",
+    photoAlt: "Open living space with entertainment setup and track lighting",
   },
   {
     name: "Overnight Stay",
@@ -47,11 +39,8 @@ const services = [
     duration: "per night",
     description:
       "2 queen beds + 1 twin Murphy bed. Full kitchenette, washer/dryer, fenced yard for your pets.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-      </svg>
-    ),
+    photo: "/photos/IMG_1074.jpg",
+    photoAlt: "Cozy bedroom with queen bed and modern decor",
   },
 ];
 
@@ -88,9 +77,15 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center pt-16">
-        {/* Background - placeholder gradient until real photos are added */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-surface to-background" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--accent)_0%,_transparent_50%)] opacity-10" />
+        {/* Background photo */}
+        <Image
+          src="/photos/IMG_7747.jpg"
+          alt="Church Street Studio interior - open living space with workspace, entertainment area, and cozy seating"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background/80" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <p className="text-accent font-medium tracking-widest uppercase text-sm mb-6">
@@ -157,22 +152,32 @@ export default function Home() {
             {services.map((service) => (
               <div
                 key={service.name}
-                className="group p-8 rounded-xl border border-border bg-surface hover:border-accent/30 hover:bg-surface-hover transition-all"
+                className="group rounded-xl border border-border bg-surface hover:border-accent/30 hover:bg-surface-hover transition-all overflow-hidden"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="p-3 rounded-lg bg-accent/10 text-accent">
-                    {service.icon}
-                  </div>
-                  <div className="text-right">
-                    <p className="text-2xl font-bold text-accent">{service.price}</p>
-                    <p className="text-sm text-muted">/ {service.duration}</p>
-                  </div>
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={service.photo}
+                    alt={service.photoAlt}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent" />
                 </div>
-                <h3 className="text-xl font-semibold mb-1">{service.name}</h3>
-                <p className="text-sm text-muted mb-3">{service.capacity}</p>
-                <p className="text-foreground/70 text-sm leading-relaxed">
-                  {service.description}
-                </p>
+                <div className="p-8 pt-4">
+                  <div className="flex items-start justify-between mb-2">
+                    <div>
+                      <h3 className="text-xl font-semibold">{service.name}</h3>
+                      <p className="text-sm text-muted">{service.capacity}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-2xl font-bold text-accent">{service.price}</p>
+                      <p className="text-sm text-muted">/ {service.duration}</p>
+                    </div>
+                  </div>
+                  <p className="text-foreground/70 text-sm leading-relaxed mt-3">
+                    {service.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -215,9 +220,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Photo Gallery */}
       <section className="py-24">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+            The Space
+          </h2>
+          <p className="text-muted text-lg text-center mb-12 max-w-2xl mx-auto">
+            770 square feet of thoughtfully designed space, plus a backyard built for good times.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {[
+              { src: "/photos/DJI_0087.jpg", alt: "Studio exterior - front porch view", span: "md:col-span-2 md:row-span-2" },
+              { src: "/photos/IMG_7748.jpg", alt: "Interior workspace with large TV and desk setup", span: "" },
+              { src: "/photos/IMG_7756.jpg", alt: "Breakfast nook with booth seating", span: "" },
+              { src: "/photos/IMG_6471.jpg", alt: "Backyard hammock and covered pavilion", span: "" },
+              { src: "/photos/IMG_8234.jpg", alt: "Outdoor ping pong table", span: "" },
+              { src: "/photos/IMG_2952.jpg", alt: "Fire pit seating area in the backyard", span: "" },
+              { src: "/photos/IMG_3400.jpg", alt: "Outdoor sectional lounge under covered patio", span: "" },
+              { src: "/photos/IMG_3902.jpg", alt: "Basketball court in the backyard", span: "md:col-span-2" },
+            ].map((photo) => (
+              <div
+                key={photo.src}
+                className={`relative overflow-hidden rounded-lg ${photo.span} ${photo.span.includes("row-span-2") ? "h-64 md:h-full" : "h-48 md:h-56"}`}
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative py-24 overflow-hidden">
+        <Image
+          src="/photos/04-2025 Church St (7).jpg"
+          alt="Aerial view of Church Street Studio property"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-background/80" />
+        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Book?
           </h2>
